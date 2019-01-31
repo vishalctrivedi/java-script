@@ -809,67 +809,65 @@ module.exports=
 
 
 
-        isNumberPalindrome(num1) 
+    isNumberPalindrome(num1) 
+    {
+        var str = "";
+        num1 = num1 + "";
+        for (let i = 0; i < num1.length; i++) 
         {
-            var str = "";
-            num1 = num1 + "";
-
-            for (let i = 0; i < num1.length; i++) 
-            {
-                str = num1.charAt(i) + str;
-            }
-            if (str == num1) 
-            {
-                return true;
-            }
-            return false;
-        },
-
-        isPrime(num) 
+            str = num1.charAt(i) + str;
+        }
+        if (str == num1) 
         {
-            if (num == 0 || num == 1)
-                return false;
-
-            for (let i = 2; i < num; i++) 
-            {
-                if (num % i == 0)
-                    return false;
-            }
             return true;
-        },
+        }
+        return false;
+    },
 
-
-        isAnagramPalindrome() 
+    isPrime(num) 
+    {
+        if (num == 0 || num == 1)
+            return false;
+        for (let i = 2; i < num; i++) 
         {
-            console.log("Prime numbers in the range of 0 to 1000 which are anagram");
+            if (num % i == 0)
+                return false;
+        }
+        return true;
+    },
+
+
+    isAnagramPalindrome() 
+    {
+        console.log("Prime numbers in the range of 0 to 1000 which are anagram");
+        {
+            var arr = [];
+            for (let i = 0; i < 1000; i++) 
             {
-                var arr = [];
-                for (let i = 0; i < 1000; i++) 
+                if (this.isPrime(i)) 
                 {
-                    if (this.isPrime(i)) 
-                    {
-                        arr.push(i);
-                    }
+                    arr.push(i);
                 }
-                for (let i = 0; i < arr.length; i++) 
+            }
+            for (let i = 0; i < arr.length; i++) 
+            {
+                for (let j = i + 1; j < arr.length; j++) 
                 {
-                    for (let j = i + 1; j < arr.length; j++) 
+                    if (this.checkAnagram(arr[i], arr[j])) 
                     {
-                        if (this.checkAnagram(arr[i], arr[j])) 
+                        console.log(arr[i] + " and " + arr[j] + " are anagram");
+                        if (this.isNumberPalindrome(arr[i])) 
                         {
-                            console.log(arr[i] + " and " + arr[j] + " are anagram");
-                            if (this.isNumberPalindrome(arr[i])) 
-                            {
-                                console.log(arr[i] + " is palindrome ");
-                            }
-                            if (this.isNumberPalindrome(arr[j])) 
-                            {
-                                console.log(arr[j] + " is palindrome ");
-                            }
+                            console.log(arr[i] + " is palindrome ");
+                        }
+                        if (this.isNumberPalindrome(arr[j])) 
+                        {
+                            console.log(arr[j] + " is palindrome ");
                         }
                     }
                 }
             }
-        },
+        }
+    },
     
 }
