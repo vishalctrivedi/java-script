@@ -4,7 +4,7 @@
  * Purpose : in order to obtain the palindrome.
  * 
  * @description
- * @file : NumPalindrome.js
+ * @file : primeAnagram.js
  * 
  * @overview : find the prime numbers that are Anagram and Palindrome.
 
