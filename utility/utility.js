@@ -693,6 +693,10 @@ module.exports=
             string=result+string;
             num=num/2;
         }
+        while(string.length<8)
+        {
+            string="0"+string;
+        }
         return string;
     },
 
