@@ -154,18 +154,20 @@ module.exports=
     {
     try
     {
+        var arr=[];
         var i;
         if(power>0 && power<31)//the power should be lesser than 31 to prevent data overflow
         {                     
             for(i=0;i<=power;i++)//loop over the index till the power
             {
-                console.log("2^"+i+"="+Math.pow(2,i));//calculate the power of 2 and display
+                arr.push(Math.pow(2,i));//calculate the power of 2 and push it to array
             }
         }
         else
         {
             console.log("Enter the number less than 31");//display invalid input message
         }
+        return arr;
     }
     catch(err)
     {
@@ -493,6 +495,60 @@ module.exports=
         var result=35.74+0.6215*temp+(0.4275*temp-35.75)*Math.pow(velocity,0.16);//calcualte windchill using the formula
         console.log(result);//display the result
     },
+
+
+
+
+
+
+    /**
+     * 15.Permutations of a String.
+     *
+     * @description:Permutation of a String using iterative method and Recursion method.
+     * 
+     * @purpose:To find all permutation in the given string.
+     *  
+     * @function:Using iterative method to find all permutation in the string.
+     */
+    findPermutations(string) 
+    {
+    try
+    {
+        var results = [];
+        /**
+         * if string is a single character add the character to results and return results
+         */
+        if (string.length === 1)
+        {
+            results.push(string);
+            return results;
+        }
+            /**
+             * for each char in string define innerPermutations as a char of string
+             * set innerPermutations to stringPermutations (without next char).
+             */
+        for (var i = 0; i < string.length; i++) 
+        {
+            var firstChar = string[i];
+            var charsLeft = string.substring(0, i) + string.substring(i + 1);
+            var innerPermutations = this.findPermutations(charsLeft);
+                /**
+                 * foreach string in innerPermutations add defined char and innerPermutations char
+                 * return results
+                 */
+            for (var j = 0; j < innerPermutations.length; j++) 
+            {
+                results.push(firstChar + innerPermutations[j]);
+            }
+        }
+        return results;
+    } 
+    catch (error)
+    {
+        console.log("error.message");
+    }
+    },
+
 
 
 
@@ -872,6 +928,37 @@ module.exports=
                 }
             }
         }
+    },
+
+
+
+
+
+
+
+    binToDecimal(num)
+    {
+        var sum=0;
+        var j=0;
+        for(let i=num.length-1;i>=0;i--)
+        {
+            sum=sum+(num.charAt(i)*Math.pow(2,j));
+            j++;
+        }
+        console.log(sum);
+    },
+
+
+
+
+    convertBinary(num)
+    {
+        var string=this.toBinary(num);
+        string1=string.substring(0,4);
+        string2=string.substring(4,string.length);
+        var swap=string2+string1;
+        this.binToDecimal(swap);
+        return swap;
     },
     
 }

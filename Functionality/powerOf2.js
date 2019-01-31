@@ -23,4 +23,5 @@ var power=input.question("Enter the index   ");
 /**
  * Taking the user input to enter the index.
  */
-read.findPowerOf2(power);//Invoking the $2Power function.
+var res=read.findPowerOf2(power);//Invoking the findPowerOf2 function.
+console.log(res);
