@@ -13,6 +13,7 @@
  *@since         :24/01/2019
  * 
  ***********************************************************/
+//const readline=require('readline-sync');
 module.exports=
 {
 
@@ -29,6 +30,36 @@ module.exports=
      *
      *@function : It takes the userinput and print it with some sentence.
      */
+
+
+
+
+    fileRead(file)
+    {
+        var fileStream=require('fs');
+        var f=fileStream.readFileSync(file,'utf8');
+        var arr=f.split(" ");
+        return arr;
+    },
+
+
+    fileWrite(fileName,data)
+    {
+        const fs=require('fs');
+        fs.writeFile(fileName,data,function(err)
+        {
+            if(err)
+            {
+                return console.log(err)
+            }
+        });
+    },
+
+
+
+
+
+
     stringreplace(username)
     {
     try
@@ -775,46 +806,45 @@ module.exports=
      */
     mergeSort(arr)
     {
-       if(arr.length <= 1)
+       if(arr.length<=1)
         {
           return arr;
         }
         
       var mid=Math.floor(arr.length/2);
-      var leftarr=arr.slice(0,mid);
-      var rightarr=arr.slice(mid);
-      var leftarr=this.mergeSort(leftarr);
-      var rightarr=this.mergeSort(rightarr);
-      return this.toMerge(leftarr,rightarr);
+      var left=arr.slice(0,mid);
+      var right=arr.slice(mid);
+      var left=this.mergeSort(left);
+      var right=this.mergeSort(right);
+      return this.toMerge(left,right);
     },
     
-    toMerge(leftarr,rightarr)
+    toMerge(left,right)
     {
-        console.log(leftarr);
         var result=[];
         var li=0;
         var ri=0;
-        while(li<leftarr.length && ri<rightarr.length)
+        while(li<left.length && ri<right.length)
         {
-          if(leftarr[li]>rightarr[ri])
+          if(left[li]>right[ri])
           {
-            result.push(rightarr[ri]);
+            result.push(right[ri]);
             ri++;
           }
           else
           {
-            result.push(leftarr[li]);
+            result.push(left[li]);
             li++;
            }
         }
-        while(li<leftarr.length)
+        while(li<left.length)
         {
-          result.push(leftarr[li]);
+          result.push(left[li]);
           li++;
         }
-        while(ri<rightarr.length)
+        while(ri<right.length)
         {
-            result.push(rightarr[ri]);
+            result.push(right[ri]);
             ri++;
         }
     return result;

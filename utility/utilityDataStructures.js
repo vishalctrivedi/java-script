@@ -67,7 +67,7 @@ class LinkedList
             str=str+" "+temp.data;
             temp=temp.next;
         }
-        console.log(str);
+        return str;
     }
 
 
@@ -80,12 +80,141 @@ class LinkedList
 
 
 
+    isEmpty() 
+    {
+        /**
+         * Condition to check the size is zero or not.
+         */
+        if (this.size == 0)
+            return true
+        else
+            return false;
+    }
+
+    remove(data) 
+    {
+        var temp = this.head;
+        var prev = null;
+        while (temp != null) 
+        {
+            /**
+             * Loop over till temp is equal to null.
+             */
+            if (temp.data === data) 
+            {
+                /**
+                 * Condition to check the passed data is equal to current data.
+                 */
+                if (prev == null) 
+                {
+                    this.head = temp.next;
+                }
+                else 
+                {
+                    prev.next = temp.next
+                    temp.next = null;
+                }
+                this.size--;
+                return temp.data;
+            }
+            else 
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+        }
+        return false;
+    }
+
+    search(data)
+     {
+        var temp = this.head;
+        while (temp) 
+        {
+            /**
+             * Condition to check weather given data is present in the list.
+             */
+            if (temp.data === data)
+             {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
 
 
 
 
 
+    indexOf(data) 
+    {
+        var count = 0;
+        var temp = this.head;
+        while (temp != null) {
+            if (temp.data === data)
+                return count;
+            count++;
+            temp = temp.next;
+          }
+        return -1;
+    }
 
+
+
+
+
+    insertAt(data,index)
+    {
+      if(index<0 || index>this.size)
+      {
+        return false;
+      }
+      else
+       {
+        var node=new Node(data);
+        var temp,prev;
+ 
+        if(index==0)
+        {
+            temp=this.head;
+            this.head=node;
+            node.next=temp;
+            
+           return true;
+        }
+        else
+        {
+           temp=this.head;
+           var i=0;
+ 
+            while(i<index)
+            {
+            i++;
+            prev=temp;
+            temp=temp.next;
+            }
+            node.next=temp;
+            prev.next=node;
+        }
+     }
+     this.size++;
+   }
+         
+ 
+   addPos(arr,num)
+   {
+     for(let i=0;i<arr.length;i++)
+     {
+       if(arr[0]>=num)
+       return 0;
+       else if(arr[i]<num && arr[i+1]>num)
+       {
+         return i+1;
+       }
+     }
+    return arr.length;
+   }
 
 
 
@@ -93,4 +222,262 @@ class LinkedList
 
 
 
-module.exports={Node,LinkedList};
+
+
+
+/*****************************STACK***************************************************** */
+class Stack 
+{
+    constructor() 
+    {
+        this.item = [];
+        this.capacity;
+        this.top = -1;
+        this.size = 0;
+    }
+    size() 
+    {
+        return this.size;
+    }
+
+    isEmpty()
+     {
+        if (this.size == 0) 
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+     }
+    
+     push(data)  
+      {
+        if (this.top == this.capacity - 1) 
+        {
+            console.log("stack overflow");
+            return;
+        }
+        this.size++;
+        this.item[++this.top] = data;
+      }
+
+    pop() 
+    {
+        if (this.top == this.capacity - 1)
+            console.log("Stack is empty");
+        this.size--;
+        return this.item.pop();
+    }
+
+    peek() 
+    {
+        if (this.top = -1) 
+        {
+            console.log("Stack is empty");
+        }
+        else 
+        {
+            return this.item(top);
+        }
+
+     print()
+      {
+        var str="";
+        for(let i=0;i<this.size;i++)
+          {
+            str=str+" "+item[i];
+              return str;
+          }
+      }
+    }
+  }
+
+
+
+
+
+
+  /**************************************Queue***************************************/
+
+
+class Queue 
+{
+    constructor() 
+    {
+        this.items = [];
+    }
+
+    enqueue(data) 
+    {
+        // adding element to the queue 
+        this.items.push(data)
+    }
+    deEqueue() 
+    {
+        if (this.isEmpty())
+            return "Underflow";
+        return this.items.shift();
+    }
+    isEmpty() 
+    {
+        // return true if the queue is empty. 
+        return this.items.length == 0;
+    }
+    printList()
+    {
+        var str="";
+        for(var i=0;i<this.items.length;i++)
+        {
+            str=str+this.items[i]+" ";
+            return str;
+        }
+    }
+}
+
+
+
+
+
+
+ /*********************Dequeue**************************** */
+
+ class Dequeue {
+    constructor() {
+        this.front = -1;
+        this.rear = 0;
+        this.size = 30;
+        this.arr = new Array(30);
+    }
+    isFull(){
+        if(this.front==0 && this.rear==this.size-1 || (this.rear+1==this.front)){
+            return true;
+        }
+        return false;
+    }
+    isEmpty(){
+        return this.front==-1;
+    }
+    addFront(item) {
+        if(this.isFull()){
+            console.log("Queue overflow");
+            return;
+        }
+        if(this.front==-1){
+            this.front=0;
+            this.rear=0;
+        }
+        else if(this.front==0){
+            this.front=this.arr.length-1;
+        }
+        else{
+            this.front--;
+        }
+        this.arr[this.front]=item;
+    }
+    addRear(item){
+        if(this.isFull()){
+            console.log("Queue overflow");
+            return;
+            
+        }
+        if(this.front==-1){
+            this.front=0;
+            this.rear=0;
+        }
+        else if(this.front==this.arr.length-1){
+            this.rear=0;
+        }
+        else{
+            this.rear++;
+        }
+        this.arr[this.rear]=item;
+    }
+    removeFront() {
+        if(this.isEmpty()){
+            console.log("Queue underflow");
+            return;
+            
+        }
+        var item;
+        if(this.front==this.rear){
+            item=this.arr[this.front];
+            this.front=-1;
+            this.rear=-1;
+        }
+        else if(this.front==this.arr.length-1){
+            item=this.arr[this.front];
+            this.front--;
+        }
+        else{
+            item=this.arr[this.front];
+            this.front++;
+        }
+        return item;
+    }
+    removeRear() {
+        if(this.isEmpty()){
+            console.log("Queue underflow");
+            return;
+            
+        }
+        var item;
+        if(this.arear==this.front){
+            item=this.arr[this.rear];
+            this.rear=-1;
+            this.front=-1;
+        }
+        else if(this.rear==0){
+            item=this.arr[this.rear];
+            this.rear=this.rear--;
+        }
+        return item;
+        }
+        getFront(){
+            if(this.isEmpty()){
+                return -1;
+            }
+            return this.arr[this.front];
+        }
+        getRear(){
+            if(this.isEmpty()){
+                return -1;
+            }
+            return this.arr[this.rear];
+        }
+   palindromeChecker(str){
+       for(let i=0;i<str.length;i++){
+           this.addRear(str.charAt(i));
+       }
+       while(this.front!=this.rear && this.front<this.rear){
+           if(this.getFront()!=this.getRear()){
+               return false;
+           }
+           this.front++;
+           this.rear--;
+       }
+       return true;
+   }
+}
+
+
+
+
+
+
+
+module.exports={Node,LinkedList,Stack,Queue,Dequeue,
+
+
+
+getBinaryTree(num)
+{
+    var fact=1;
+    for(let i=1;i<=num;i++)
+    {
+        fact=fact*i;
+    }
+    return fact;
+}
+}
