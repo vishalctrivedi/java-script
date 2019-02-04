@@ -7,7 +7,7 @@
  *
  *@file          :calender.js
  *@overview      :calender that takes the month and year as command-line arguments and prints the Calendar of the month
- *@author name   :Anush Kumar s k <anushk136@gmail.com>
+ *@author name   :Vishal C <iamvishal96@gmail.com>
  *@version       :1.0
  *@since         :02/02/2019
  * 
