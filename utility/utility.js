@@ -169,6 +169,35 @@ module.exports=
 
 
 
+    /*
+    * @purpose : to find a user input is leap year or not
+    * 
+    * @description :declaring function and passing 4 digit number by taking user input
+    * @function: check wheather the given input is of 4 digit and check wheather the given year is leap year
+    */
+
+
+   isLeapYear(year) {
+
+       if (year > 999 && year < 10000)  //year should be of 4 digit
+       {
+           if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0))    //since leap year comes for every 4 year
+           {
+               return true;      //return value
+           }
+           else
+               return false;    //return value 
+       }
+       else           //if it is not a leap year
+       {
+           return "year should be of 4 digits"     //return string
+       }
+
+},
+
+
+
+
 
         /******************PowerOf2*********************/
     /**
@@ -860,7 +889,7 @@ module.exports=
     * @purpose : to find the numbers that are anagram and palindrome.
     * @description : Extend 
     */
-   checkAnagram(s1, s2) 
+   isAnagram(s1, s2) 
    {
     var format = /[a-zA-Z0-9]/;
     var result;
@@ -990,5 +1019,32 @@ module.exports=
         this.binToDecimal(swap);
         return swap;
     },
+
+
+
+
+
+
+    /*
+        *@purpose : to find day falls on the given user input date format
+        *@param   : day-take date from command line of user choice 
+        *           month-take month from command line of user choice
+        *           year- take year from command line of user choice
+        *@description : use formula and calculate the day 
+        */
+       findDay(day, month, year) {
+
+        var y0 = year - Math.floor((14 - month) / 12);
+
+        var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
+
+        var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
+
+        var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
+        console.log(d0);
+        return d0;
+
+
+},
     
 }

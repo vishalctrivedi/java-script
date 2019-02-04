@@ -28,32 +28,41 @@ function call() {
        /**
         * Condition to check leapyear.
         */
-        if (leap == true) {
+        if (leap == true) 
+        {
             dates[2] = 29;
         }
         /**
          * Loop till week length and prints week
          */
-        for (var i = 0; i < week.length; i++) {
+        for (var i = 0; i < week.length; i++) 
+        {
             T.print(week[i] + "  ");
         }
         console.log();
-        for (var i = 0; i < (day * 5); i++) {
+        for (var i = 0; i < (day * 5); i++) 
+        {
             T.print(" ");
         }
-        for (var i = 1; i <= dates[month]; i++) {
-            if (i < 10) {
+        for (var i = 1; i <= dates[month]; i++) 
+        {
+            if (i < 10) 
+            {
                 T.print(" " + i + "   ");
             }
-            if (i > 9) {
+            if (i > 9) 
+            {
                 T.print("" + i + "   ")
             }
-            if ((i + day) % 7 == 0) {
+            if ((i + day) % 7 == 0) 
+            {
                 console.log();
             }
         }
         console.log("\n\n");
-    } catch (err) {
+    } catch (err) 
+    {
         console.log(err.message);
     }
-} call();
+} 
+call();

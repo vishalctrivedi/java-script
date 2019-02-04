@@ -10,13 +10,12 @@
  *               the number in appropriate position.
  * @author   :   Vishal C  <iamvishal96@gmail.com>
  * @version  :   1.0
- * @since    :   31/01/2019
+ * @since    :   04/02/2019
 
  **************************************************************************/
 var read=require('../utility/utility');
 var read1=require('../utility/utilityDataStructures');
 var input=require('readline-sync');
-
 var arr=read.fileRead('vishal.txt');
 read.mergeSort(arr);
 console.log(arr);
@@ -33,7 +32,7 @@ var valid=false;
 
 do
  {
-  var number=input.question("enter the number: ");
+  var number=input.questionInt("enter the number: ");
     if(isNaN(number))
      {
        console.log("not a valid entry,enter only numbers")
@@ -59,12 +58,12 @@ if(result === true)
 }
 else
 {
-    var position=linkedlist.addpos(arr,number);
+    var position=linkedlist.addPos(arr,number);
     linkedlist.insertAt(number,position);
     var output1=linkedlist.print();
 
     read.fileWrite('vishal.txt',output1);
-    console.log("word added successfully");
+    console.log("Number added successfully");
     console.log("new data"+ output1);
 }
 

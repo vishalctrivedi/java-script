@@ -1,5 +1,5 @@
 var access=require('../utility/utilityDataStructures');
-var input=require('../utility/utility');
+//var input=require('../utility/utility');
 var read=require('readline-sync');
 var number=read.questionFloat("enter the number :");
 var factorial=access.getBinaryTree(number);

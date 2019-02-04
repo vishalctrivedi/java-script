@@ -235,10 +235,17 @@ class Stack
         this.top = -1;
         this.size = 0;
     }
+
+
+
+
     size() 
     {
         return this.size;
     }
+
+
+
 
     isEmpty()
      {
@@ -251,6 +258,9 @@ class Stack
             return false;
         }
      }
+
+
+
     
      push(data)  
       {
@@ -263,6 +273,9 @@ class Stack
         this.item[++this.top] = data;
       }
 
+
+
+
     pop() 
     {
         if (this.top == this.capacity - 1)
@@ -270,6 +283,9 @@ class Stack
         this.size--;
         return this.item.pop();
     }
+
+
+
 
     peek() 
     {
@@ -282,17 +298,22 @@ class Stack
             return this.item(top);
         }
 
+    }
+
+
      print()
       {
         var str="";
         for(let i=0;i<this.size;i++)
           {
-            str=str+" "+item[i];
-              return str;
+            str=str+" "+this.item[i];
           }
+          return str;
       }
     }
-  }
+
+
+  
 
 
 
@@ -302,37 +323,84 @@ class Stack
   /**************************************Queue***************************************/
 
 
-class Queue 
-{
+  class Queue 
+  {
     constructor() 
     {
-        this.items = [];
+        this.tail = null;
+        this.head = null;
     }
-
-    enqueue(data) 
+    /**
+     * To add an element into the rear of the queue.
+     * @param {any} item
+     */
+    enQueue(item) 
     {
-        // adding element to the queue 
-        this.items.push(data)
+        /**
+         * Create a node by passing the item
+         */
+        let node = new Node(item);
+        /**
+         * If there are no head and tail, point the data to head and tail
+         */
+        if (!this.head) 
+        {
+            this.head = node;
+            this.tail = node;
+        } else {
+            /**
+             * We just move the tail pointer
+             */
+            this.tail.next = node;
+            this.tail = node;
+        }
     }
-    deEqueue() 
+    /**
+     * To remove an item from the queue.
+     */
+    deQueue() 
     {
-        if (this.isEmpty())
-            return "Underflow";
-        return this.items.shift();
+        if (!this.head) 
+        {
+            return "No item";
+        } else {
+            let itemToPop = this.head;
+            this.head = this.head.next;
+            return itemToPop;
+        }
     }
+    /**
+     *return true if the queue is empty.
+     */
     isEmpty() 
     {
-        // return true if the queue is empty. 
-        return this.items.length == 0;
+        return this.size() < 1;
     }
-    printList()
+    /**
+     * Returns the size of the queue
+     */
+    size() 
     {
-        var str="";
-        for(var i=0;i<this.items.length;i++)
+        let current = this.head;
+        let counter = 0;
+        while (current) 
         {
-            str=str+this.items[i]+" ";
-            return str;
+            counter++;
+            current = current.next;
         }
+        return counter;
+    }
+    printList() 
+    {
+        var st = ""
+        var temp = this.head
+        while (temp) 
+        {
+            //console.log(temp.data)
+            st = st + " " + temp.data
+            temp = temp.next
+        }
+        return st;
     }
 }
 
@@ -341,83 +409,123 @@ class Queue
 
 
 
+
  /*********************Dequeue**************************** */
 
- class Dequeue {
-    constructor() {
+ class Dequeue 
+ {
+    constructor() 
+    {
         this.front = -1;
         this.rear = 0;
         this.size = 30;
         this.arr = new Array(30);
     }
-    isFull(){
+
+
+
+    isFull()
+    {
         if(this.front==0 && this.rear==this.size-1 || (this.rear+1==this.front)){
             return true;
         }
         return false;
     }
-    isEmpty(){
+
+
+
+    isEmpty()
+    {
         return this.front==-1;
     }
-    addFront(item) {
-        if(this.isFull()){
+
+
+
+    addFront(item) 
+    {
+        if(this.isFull())
+        {
             console.log("Queue overflow");
             return;
         }
-        if(this.front==-1){
+        if(this.front==-1)
+        {
             this.front=0;
             this.rear=0;
         }
-        else if(this.front==0){
+        else if(this.front==0)
+        {
             this.front=this.arr.length-1;
         }
-        else{
+        else
+        {
             this.front--;
         }
         this.arr[this.front]=item;
     }
-    addRear(item){
-        if(this.isFull()){
+
+
+
+    addRear(item)
+    {
+        if(this.isFull())
+        {
             console.log("Queue overflow");
             return;
             
         }
-        if(this.front==-1){
+        if(this.front==-1)
+        {
             this.front=0;
             this.rear=0;
         }
-        else if(this.front==this.arr.length-1){
+        else if(this.front==this.arr.length-1)
+        {
             this.rear=0;
         }
-        else{
+        else
+        {
             this.rear++;
         }
         this.arr[this.rear]=item;
     }
-    removeFront() {
-        if(this.isEmpty()){
+
+
+
+    removeFront() 
+    {
+        if(this.isEmpty())
+        {
             console.log("Queue underflow");
             return;
             
         }
         var item;
-        if(this.front==this.rear){
+        if(this.front==this.rear)
+        {
             item=this.arr[this.front];
             this.front=-1;
             this.rear=-1;
         }
-        else if(this.front==this.arr.length-1){
+        else if(this.front==this.arr.length-1)
+        {
             item=this.arr[this.front];
             this.front--;
         }
-        else{
+        else
+        {
             item=this.arr[this.front];
             this.front++;
         }
         return item;
     }
-    removeRear() {
-        if(this.isEmpty()){
+
+
+
+    removeRear() 
+    {
+        if(this.isEmpty())
+        {
             console.log("Queue underflow");
             return;
             
@@ -428,37 +536,30 @@ class Queue
             this.rear=-1;
             this.front=-1;
         }
-        else if(this.rear==0){
+        else if(this.rear==0)
+        {
             item=this.arr[this.rear];
             this.rear=this.rear--;
         }
         return item;
         }
-        getFront(){
-            if(this.isEmpty()){
+        getFront()
+        {
+            if(this.isEmpty())
+            {
                 return -1;
             }
             return this.arr[this.front];
         }
-        getRear(){
+        getRear()
+        {
             if(this.isEmpty()){
                 return -1;
             }
             return this.arr[this.rear];
         }
-   palindromeChecker(str){
-       for(let i=0;i<str.length;i++){
-           this.addRear(str.charAt(i));
-       }
-       while(this.front!=this.rear && this.front<this.rear){
-           if(this.getFront()!=this.getRear()){
-               return false;
-           }
-           this.front++;
-           this.rear--;
-       }
-       return true;
-   }
+
+
 }
 
 
@@ -479,5 +580,57 @@ getBinaryTree(num)
         fact=fact*i;
     }
     return fact;
+},
+
+
+
+
+isPrime(initial,final)
+{
+var flag=0;
+k=0;
+var prime=[];
+
+for(var index1=initial;index1<=final;index1++)
+{
+  for(var index2=2;index2<index1;index2++)
+  {
+    if(index1%index2==0)
+    {
+      flag=0;
+      break;
+    }
+    else
+    {
+      flag=1;
+    }
+  }
+  if(flag==1)
+  {
+    prime[k++]=index1;
+  }
 }
+return prime;
+},
+
+
+palindromeChecker(str)
+{
+    for(let i=0;i<str.length;i++){
+        this.addRear(str.charAt(i));
+    }
+    while(this.front!=this.rear && this.front<this.rear){
+        if(this.getFront()!=this.getRear()){
+            return false;
+        }
+        this.front++;
+        this.rear--;
+    }
+    return true;
+}
+
+
+
+
+
 }
