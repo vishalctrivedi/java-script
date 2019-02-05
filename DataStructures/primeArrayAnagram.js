@@ -18,15 +18,15 @@
 /**
  * import the Utility class to use the functionalities.
  */
-var dsUtil = require('../utility/utilityDataStructures');
-var ref = require('util');
-var util = require('../utility/utility');
+var utilds = require('../utility/utilityDataStructures');
+var util = require('util');
+var utility = require('../utility/utility');
 arrPrime = [];
 var array = [['0-100    :'], ['100-200  :'], ['200-300  :'], ['300-400  :'], ['400-500  :'], ['500-600  :'], ['600-700  :'], ['700-800  :'], ['800-900  :'], ['900-1000 :']]
 
 for (let i = 2; i < 1000; i++) 
 {
-    if (util.isPrime(i)) 
+    if (utility.isPrime(i)) 
     {
         arrPrime.push(i);//pushing all the prime value into the arrPrime
     }
@@ -36,7 +36,7 @@ for (let index = 0; index < arrPrime.length; index++)
 {
     for (let index1 = index + 1; index1 < arrPrime.length; index1++) 
     {
-        if (util.checkAnagram(arrPrime[index], arrPrime[index1])) 
+        if (utility.isAnagram(arrPrime[index], arrPrime[index1])) 
         {//checking for the angram and prime value
             if (arrPrime[index] <= range) 
             {
@@ -65,7 +65,7 @@ for (var i = 0; i < array.length; i++)
 {
     for (var j = 0; j < array[i].length; j++) 
     {
-        ref.print(array[i][j] + " ")
+        util.print(array[i][j] + " ")
     }
     console.log()//printing into the console
 }

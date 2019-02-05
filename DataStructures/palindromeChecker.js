@@ -14,12 +14,12 @@
  * @since    :   02/02/2019
 
  **************************************************************************/
-var read = require('../utility/utilityDataStructures');
-var read1 = require('../utility/utility');
+var utilds = require('../utility/utilityDataStructures');
+var utility = require('../utility/utility');
 var input = require('readline-sync');
 function check()
 {
-var d = new read.Dequeue;
+var d = new utilds.Dequeue;
 var word = input.question("Enter the word :");
 var result=d.isPalindrome(word);
 if(result==false)

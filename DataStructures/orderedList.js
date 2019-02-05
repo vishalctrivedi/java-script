@@ -13,10 +13,10 @@
  * @since    :   04/02/2019
 
  **************************************************************************/
-var read=require('../utility/utility');
-var read1=require('../utility/utilityDataStructures');
+var utility=require('../utility/utility');
+var utilds=require('../utility/utilityDataStructures');
 var input=require('readline-sync');
-var arr1=read.fileRead('vishal.txt');
+var arr1=utility.fileRead('vishal.txt');
 console.log("Before sort: "+arr1);
 var arr = [];
 for (let i = 0; i < arr1.length; i++) 
@@ -28,7 +28,7 @@ arr.sort();
 console.log("after sort: "+arr);
 
 
-var linkedlist= new read1.LinkedList();
+var linkedlist= new utilds.LinkedList();
 
 for(let i=0;i<arr.length;i++)
 {
@@ -60,7 +60,7 @@ if(result === true)
     console.log(linkedlist.remove(number));
 
     var output=linkedlist.print();
-    read.fileWrite('vishal.txt',output)
+    utility.fileWrite('vishal.txt',output)
     console.log("removed the number");
     console.log("new data: "+output);
 }
@@ -70,7 +70,7 @@ else
     linkedlist.insertAt(number,position);
     var output1=linkedlist.print();
 
-    read.fileWrite('vishal.txt',output1);
+    utility.fileWrite('vishal.txt',output1);
     console.log("Number added successfully");
     console.log("new data"+ output1);
 }

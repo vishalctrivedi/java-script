@@ -1150,7 +1150,8 @@ module.exports=
         *           year- take year from command line of user choice
         *@description : use formula and calculate the day 
         */
-       findDay(day, month, year) {
+       findDay(day, month, year) 
+       {
 
         var y0 = year - Math.floor((14 - month) / 12);
 
@@ -1159,7 +1160,7 @@ module.exports=
         var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
 
         var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
-        console.log(d0);
+        //console.log(d0);
         return d0;
 
 

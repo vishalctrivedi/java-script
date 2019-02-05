@@ -1,8 +1,8 @@
-var access = require('../utility/utilityDataStructures');
+var utilds = require('../utility/utilityDataStructures');
 var M = require('../utility/utility')
 var readline = require('readline-sync');
 var arr=[];
-var Q=new access.Queue;
+var Q=new utilds.Queue;
 for (let i =0; i<1000; i++) 
 {
     if (M.isPrime(i))

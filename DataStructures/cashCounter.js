@@ -14,12 +14,12 @@
  * @since    :   01/02/2019
 
  **************************************************************************/
-var read=require('../utility/utility');
-var read1=require('../utility/utilityDataStructures');
+var util=require('../utility/utility');
+var utilds=require('../utility/utilityDataStructures');
 var input=require('readline-sync');
 function Queue() 
 {
-    var L = new read1.Queue;
+    var L = new utilds.Queue;
     var bankAmount = 10000;
     var flag = true;
     var size = input.question("Enter the total number of people to be in queue = ");

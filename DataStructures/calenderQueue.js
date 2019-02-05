@@ -22,13 +22,13 @@
 * */
 var take = require('util');
 const ref = require('readline-sync')
-var que = require('../utility/utilityDataStructures');
-var Utility = require('../utility/utility');
+var utilds = require('../utility/utilityDataStructures');
+var utility = require('../utility/utility');
 function calender() 
 {
 
-    var dayQue = new que.Queue;
-    var dateQue = new que.Queue;
+    var dayQue = new utilds.Queue1;
+    var dateQue = new utilds.Queue1;
     var month = ref.questionInt('enter month')
     var year = ref.questionInt('enter year')
 
@@ -44,12 +44,12 @@ function calender()
         year = ref.questionInt('enter year greater than 0')
     }
 
-    var day = Utility.findDay(1, month, year);
-    console.log(day);
+    var day = utility.findDay(1, month, year);
+    //console.log(day);
     var week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     var dates = [0, 31, 28, 31, 30, 31, 31, 30, 31, 30, 31, 30, 31];
 
-    var leap = Utility.isLeapYear(year);//checking wheather the given year is leap year by using isleapyear function
+    var leap = utility.isLeapYear(year);//checking wheather the given year is leap year by using isleapyear function
     if (leap) 
     {
         dates[2] = 29;//if the year is leap year then the number of days is 29
@@ -57,17 +57,17 @@ function calender()
 
     for (var i = 0; i < week.length; i++) 
     {//taking all the days into one array
-        dayQue.enQueue(week[i]);
+        dayQue.enqueue(week[i]);
     }
     for (var i = 1; i <= dates[month]; i++) 
     {//taking all the date into one array
-        dateQue.enQueue(i);
+        dateQue.enqueue(i);
     }
 
 
     for (var i = 0; i < week.length; i++) 
     {
-        take.print(dayQue.deQueue() + "  ");
+        take.print(dayQue.dequeue() + "  ");
     }
     console.log();
     for (var i = 0; i < (day * 5); i++) 
@@ -79,7 +79,7 @@ function calender()
     {
         if (i < 10) 
         {
-            take.print(" " + dateQue.deQueue() + "   ");//printing dates less than 10
+            take.print(" " + dateQue.dequeue() + "   ");//printing dates less than 10
 
         }
 

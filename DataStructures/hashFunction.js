@@ -1,6 +1,6 @@
-var access = require('../utility/utilityDataStructures');
+var utilds = require('../utility/utilityDataStructures');
 var readline = require('readline-sync');
-var take = require('util');
+var util = require('util');
 var filestream = require('fs');
 var utility = require('../utility/utility');
 
@@ -18,7 +18,7 @@ function hashing()
         
         if (arr[remainder] === undefined) 
         {
-            arr[remainder] = new access.LinkedList;
+            arr[remainder] = new utilds.LinkedList;
             arr[remainder].add(n);
         } 
         else 
@@ -30,7 +30,7 @@ function hashing()
     var str = "";
     for (let index = 0; index < 10; index++) 
     {
-        take.print(index + " slot: ");
+        util.print(index + " slot: ");
         try 
         {
             console.log(arr[index].print());
@@ -58,7 +58,7 @@ function hashing()
         
         if (arr[remainder] == undefined) 
         {
-            arr[remainder] = new access.LinkedList;
+            arr[remainder] = new utilds.LinkedList;
         }
         if (arr[remainder].search(Number(number))) 
         {
@@ -76,7 +76,7 @@ function hashing()
         for (let index = 0; index < 10; index++) 
         {
             flag = true;
-            take.print(index + " result slot: ");
+            util.print(index + " result slot: ");
             try 
             {
                 console.log(arr[index].print());

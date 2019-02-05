@@ -327,9 +327,13 @@ class Stack
   {
     constructor() 
     {
+        this.items=[];
         this.tail = null;
         this.head = null;
     }
+
+
+
     /**
      * To add an element into the rear of the queue.
      * @param {any} item
@@ -363,7 +367,8 @@ class Stack
         if (!this.head) 
         {
             return "No item";
-        } else {
+        } else 
+        {
             let itemToPop = this.head;
             this.head = this.head.next;
             return itemToPop;
@@ -595,8 +600,50 @@ class Stack
 
 
 
+class Queue1
+{
+  constructor()
+   {
+    this.items=[];
+   }
 
-module.exports={Node,LinkedList,Stack,Queue,Dequeue,
+  enqueue(data)
+   {
+    this.items.push(data);
+   }
+
+  dequeue()
+   {
+    if(this.isEmpty())
+     {
+      return "Underflow";
+      }
+     return this.items.shift();
+   }
+
+  isEmpty()
+   {
+    return this.items.length==0;
+   }
+
+  printList()
+   {
+    var str="";
+    for(var i=0;i<this.items.length;i++)
+     {  
+      str=str+this.items[i]+" ";
+      return str;
+     }
+   }
+}
+
+
+
+
+
+
+
+module.exports={Node,LinkedList,Stack,Queue,Dequeue,Queue1,
 
 
 
