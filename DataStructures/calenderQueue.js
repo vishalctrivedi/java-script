@@ -35,7 +35,7 @@ function calender()
     while ((month < 0 || month >= 12) || (month == isNaN)) 
     {//validating month
         console.log("month should be less than 12")
-        month = ref.questionInt('enter month greater than 0 nad less than 12')
+        month = ref.questionInt('enter month greater than 0  less than 12')
     }
     while (year == (isNaN) || year < 0)//validating year
     {

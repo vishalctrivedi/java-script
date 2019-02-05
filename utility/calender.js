@@ -13,8 +13,10 @@
  *@since         :31/01/2019
  * 
  ***********************************************************/
-module.exports = {
-    day(m, d, y) {
+module.exports = 
+{
+    day(m, d, y) 
+    {
         var v = Math.floor((14 - m) / 12)
         var y0 = y - v
         var x = y0 + Math.floor(y0 / 4) - Math.floor(y0 / 100) + Math.floor(y0 / 400)
@@ -23,7 +25,8 @@ module.exports = {
         d0 = Math.floor(d0)
         return d0;
     },
-    leapYear(year) {
+    leapYear(year) 
+    {
         if (year % 4 == 0 || year % 400 == 0 || year % 100 == 0) {
             return true;
         }
@@ -31,8 +34,10 @@ module.exports = {
             return false;
         }
     },
-    monthof(month) {
-        switch (month) {
+    monthof(month) 
+    {
+        switch (month) 
+        {
             case 1: return 31;
                 break;
             case 2: return 28;

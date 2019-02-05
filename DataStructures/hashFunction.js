@@ -28,7 +28,7 @@ function hashing()
     }
     
     var str = "";
-    for (let index = 0; index < 10; index++) 
+    for (let index = 0; index < 11; index++) 
     {
         util.print(index + " slot: ");
         try 
@@ -42,12 +42,14 @@ function hashing()
     console.log()
     var valid = false;
    
-    do {
+    do 
+    {
         var number = readline.question('Enter the number you want to search \n');
       if (isNaN(number) && number<0) 
       {
-        console.log("Enter positive number only greater than zero");
-      } else 
+        console.log("Enter positive number");
+      } 
+      else 
       {
         valid = true;
       }

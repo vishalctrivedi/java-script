@@ -14,7 +14,7 @@
  ***********************************************************/
 var utilcalender = require('../utility/calender')
 var utility = require('../utility/utility');
-var T = require('util')
+var util = require('util')
 function call() 
 {
     try 
@@ -39,22 +39,22 @@ function call()
          */
         for (var i = 0; i < week.length; i++) 
         {
-            T.print(week[i] + "  ");
+            util.print(week[i] + "  ");
         }
         console.log();
         for (var i = 0; i < (day * 5); i++) 
         {
-            T.print(" ");
+            util.print(" ");
         }
         for (var i = 1; i <= dates[month]; i++) 
         {
             if (i < 10) 
             {
-                T.print(" " + i + "   ");
+                util.print(" " + i + "   ");
             }
             if (i > 9) 
             {
-                T.print("" + i + "   ")
+                util.print("" + i + "   ")
             }
             if ((i + day) % 7 == 0) 
             {
