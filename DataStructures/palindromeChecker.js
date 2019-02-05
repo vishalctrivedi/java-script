@@ -21,7 +21,7 @@ function check()
 {
 var d = new read.Dequeue;
 var word = input.question("Enter the word :");
-var result=d.palindromeChecker(word);
+var result=d.isPalindrome(word);
 if(result==false)
 {
     console.log("String is not a palindrome");

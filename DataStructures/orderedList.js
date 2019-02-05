@@ -16,9 +16,17 @@
 var read=require('../utility/utility');
 var read1=require('../utility/utilityDataStructures');
 var input=require('readline-sync');
-var arr=read.fileRead('vishal.txt');
-read.mergeSort(arr);
-console.log(arr);
+var arr1=read.fileRead('vishal.txt');
+console.log("Before sort: "+arr1);
+var arr = [];
+for (let i = 0; i < arr1.length; i++) 
+{
+    arr[i] = parseInt(arr1[i]);
+    
+}
+arr.sort();
+console.log("after sort: "+arr);
+
 
 var linkedlist= new read1.LinkedList();
 

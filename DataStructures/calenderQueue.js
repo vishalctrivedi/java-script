@@ -24,7 +24,8 @@ var take = require('util');
 const ref = require('readline-sync')
 var que = require('../utility/utilityDataStructures');
 var Utility = require('../utility/utility');
-function calender() {
+function calender() 
+{
 
     var dayQue = new que.Queue;
     var dateQue = new que.Queue;
@@ -56,17 +57,17 @@ function calender() {
 
     for (var i = 0; i < week.length; i++) 
     {//taking all the days into one array
-        dayQue.push(week[i]);
+        dayQue.enQueue(week[i]);
     }
     for (var i = 1; i <= dates[month]; i++) 
     {//taking all the date into one array
-        dateQue.push(i);
+        dateQue.enQueue(i);
     }
 
 
     for (var i = 0; i < week.length; i++) 
     {
-        take.print(dayQue.pop() + "  ");
+        take.print(dayQue.deQueue() + "  ");
     }
     console.log();
     for (var i = 0; i < (day * 5); i++) 
@@ -78,7 +79,7 @@ function calender() {
     {
         if (i < 10) 
         {
-            take.print(" " + dateQue.pop() + "   ");//printing dates less than 10
+            take.print(" " + dateQue.deQueue() + "   ");//printing dates less than 10
 
         }
 

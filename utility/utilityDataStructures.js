@@ -100,7 +100,7 @@ class LinkedList
             /**
              * Loop over till temp is equal to null.
              */
-            if (temp.data === data) 
+            if (temp.data == data) 
             {
                 /**
                  * Condition to check the passed data is equal to current data.
@@ -543,21 +543,49 @@ class Stack
         }
         return item;
         }
-        getFront()
+
+
+
+        
+    getFront()
+    {
+        if(this.isEmpty())
         {
-            if(this.isEmpty())
+            return -1;
+        }
+        return this.arr[this.front];
+    }
+
+
+
+
+    getRear()
+    {
+        if(this.isEmpty()){
+            return -1;
+        }
+        return this.arr[this.rear];
+    }
+
+
+
+    isPalindrome(str)
+    {
+        for(let i=0;i<str.length;i++)
+        {
+            this.addRear(str.charAt(i));
+        }
+        while(this.front!=this.rear && this.front<this.rear)
+        {
+            if(this.getFront()!=this.getRear())
             {
-                return -1;
+                return false;
             }
-            return this.arr[this.front];
+            this.front++;
+            this.rear--;
         }
-        getRear()
-        {
-            if(this.isEmpty()){
-                return -1;
-            }
-            return this.arr[this.rear];
-        }
+        return true;
+    }
 
 
 }
@@ -614,23 +642,8 @@ return prime;
 },
 
 
-palindromeChecker(str)
-{
-    for(let i=0;i<str.length;i++){
-        this.addRear(str.charAt(i));
-    }
-    while(this.front!=this.rear && this.front<this.rear){
-        if(this.getFront()!=this.getRear()){
-            return false;
-        }
-        this.front++;
-        this.rear--;
-    }
-    return true;
-}
-
-
 
 
 
 }
+

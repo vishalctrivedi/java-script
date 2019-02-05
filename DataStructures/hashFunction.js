@@ -33,7 +33,7 @@ function hashing()
         take.print(index + " slot: ");
         try 
         {
-            console.log(arr[index].printList());
+            console.log(arr[index].print());
         } catch (err) 
         {
             console.log("empty index");
@@ -56,14 +56,14 @@ function hashing()
         remainder = Number(number % 10);
         console.log("Remainder is "+remainder);
         
-        if (arr[remainder] === undefined) 
+        if (arr[remainder] == undefined) 
         {
             arr[remainder] = new access.LinkedList;
         }
-        if (arr[remainder].contains(Number(number))) 
+        if (arr[remainder].search(Number(number))) 
         {
             console.log("The number is present in the file");
-            arr[remainder].removeItem(number);
+            arr[remainder].remove(number);
 
         } 
         else 
@@ -79,8 +79,8 @@ function hashing()
             take.print(index + " result slot: ");
             try 
             {
-                console.log(arr[index].printList());
-                str = str + arr[index].printList();
+                console.log(arr[index].print());
+                str = str + arr[index].print();
             } catch (err) 
             {
                 console.log("Empty index");
