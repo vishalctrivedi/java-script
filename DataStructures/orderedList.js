@@ -14,7 +14,7 @@
 
  **************************************************************************/
 var utility=require('../utility/utility');
-var utilds=require('../utility/utilityDataStructures');
+var utilDS=require('../utility/utilityDataStructures');
 var input=require('readline-sync');
 var arr1=utility.fileRead('vishal.txt');
 console.log("Before sort: "+arr1);
@@ -28,7 +28,7 @@ arr.sort();
 console.log("after sort: "+arr);
 
 
-var linkedlist= new utilds.LinkedList();
+var linkedlist= new utilDS.LinkedList();
 
 for(let i=0;i<arr.length;i++)
 {

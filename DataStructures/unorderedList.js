@@ -1,11 +1,11 @@
 var utility=require('../utility/utility');
-var utilds=require('../utility/utilityDataStructures');
+var utilDS=require('../utility/utilityDataStructures');
 var input=require('readline-sync');
 var word=input.question("enter word to be searched in file:")
 
 
 var arr=utility.fileRead('vishal.txt');
-var l=new utilds.LinkedList();
+var l=new utilDS.LinkedList();
 for(let i=0;i<arr.length;i++)
 {
    l.add(arr[i])

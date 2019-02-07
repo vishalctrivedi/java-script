@@ -13,13 +13,13 @@
  * @since    :   01/02/2019
 
  **************************************************************************/
-var utilds=require('../utility/utilityDataStructures');
+var utilDS=require('../utility/utilityDataStructures');
 //var read1=require('../utility/utility');
 var input=require('readline-sync');
 
- function Stack()
+ function stack()
  {
-     var St=new utilds.Stack;
+     var St=new utilDS.Stack;
      var str=input.question("enter mathematical expression with para");
     var ch,i;
 
@@ -60,7 +60,7 @@ var input=require('readline-sync');
      return false;
  }
 
- var bol=Stack();
+ var bol=stack();
 console.log(bol);
  if(bol)
  {

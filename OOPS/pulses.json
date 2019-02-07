@@ -1,0 +1,19 @@
+{
+    "Pulses":[
+    {
+        "name":"basmathi",
+        "weight":5,
+        "price":90
+    },
+    {
+        "name":"raw",
+        "weight":10,
+        "price":45
+    },
+    {
+        "name":"boiled",
+        "weight":15,
+        "price":25
+    }
+    ]
+}

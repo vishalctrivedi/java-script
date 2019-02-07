@@ -1,0 +1,19 @@
+{
+    "Wheat":[
+    {
+        "name":"ashirvad",
+        "weight":6,
+        "price":40
+    },
+    {
+        "name":"annapurna",
+        "weight":7,
+        "price":35
+    },
+    {
+        "name":"pillsbury",
+        "weight":2,
+        "price":
+    }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "Stock": [
+        {
+            "name": "bridglabs",
+            "share": 50,
+            "price": 10000
+        },
+        {
+            "name": "google",
+            "share": 6235,
+            "price": 5000
+        },
+        {
+            "name": "amazon",
+            "share": 1200,
+            "price": 4000
+        },
+        {
+            "name": "tcs",
+            "share": 802,
+            "price": 2450
+        }
+    ]
+}

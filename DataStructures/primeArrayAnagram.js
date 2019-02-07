@@ -18,7 +18,6 @@
 /**
  * import the Utility class to use the functionalities.
  */
-var utilds = require('../utility/utilityDataStructures');
 var util = require('util');
 var utility = require('../utility/utility');
 arrPrime = [];

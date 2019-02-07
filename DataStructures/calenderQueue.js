@@ -20,28 +20,28 @@
 * 'readline'helps to have conversation with the user via a console,
 * '-sync' helps readline to sync even when the input/output stream is redirected.
 * */
-var take = require('util');
-const ref = require('readline-sync')
-var utilds = require('../utility/utilityDataStructures');
+var util = require('util');
+const input = require('readline-sync')
+var utilDS = require('../utility/utilityDataStructures');
 var utility = require('../utility/utility');
 function calender() 
 {
 
-    var dayQue = new utilds.Queue1;
-    var dateQue = new utilds.Queue1;
-    var month = ref.questionInt('enter month')
-    var year = ref.questionInt('enter year')
+    var dayQue = new utilDS.Queue1;
+    var dateQue = new utilDS.Queue1;
+    var month = input.questionInt('enter month')
+    var year = input.questionInt('enter year')
 
     while ((month < 0 || month >= 12) || (month == isNaN)) 
     {//validating month
         console.log("month should be less than 12")
-        month = ref.questionInt('enter month greater than 0  less than 12')
+        month = input.questionInt('enter month greater than 0  less than 12')
     }
     while (year == (isNaN) || year < 0)//validating year
     {
 
         console.log("year should be greater than 0")
-        year = ref.questionInt('enter year greater than 0')
+        year = input.questionInt('enter year greater than 0')
     }
 
     var day = utility.findDay(1, month, year);
@@ -67,25 +67,25 @@ function calender()
 
     for (var i = 0; i < week.length; i++) 
     {
-        take.print(dayQue.dequeue() + "  ");
+        util.print(dayQue.dequeue() + "  ");
     }
     console.log();
     for (var i = 0; i < (day * 5); i++) 
     {
-        take.print(" ");
+        util.print(" ");
     }
 
     for (var i = 1; i <= dates[month]; i++) 
     {
         if (i < 10) 
         {
-            take.print(" " + dateQue.dequeue() + "   ");//printing dates less than 10
+            util.print(" " + dateQue.dequeue() + "   ");//printing dates less than 10
 
         }
 
         if (i > 9) 
         {
-            take.print("" + i + "   ")//printing dates greater than 10
+            util.print("" + i + "   ")//printing dates greater than 10
         }
         if ((i + day) % 7 == 0) 
         {

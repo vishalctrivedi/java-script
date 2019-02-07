@@ -20,26 +20,26 @@
  * 'readline'helps to have conversation with the user via a console,
  * '-sync' helps readline to sync even when the input/output stream is redirected.
  */var util = require('util');
- var utilds = require('../utility/utilityDataStructures');
+ var utilDS = require('../utility/utilityDataStructures');
  var utility = require('../utility/utility');
- var ref=require('readline-sync');
+ var input=require('readline-sync');
  function calender() 
  {
  
-     var dayQue = new utilds.Stack;//creating object of stack
-     var dateQue = new utilds.Stack;//creating object of stack
-     var month = ref.questionInt('enter the month in integer')
-     var year = ref.questionInt('enter the year')//taking user input
+     var daystack = new utilDS.Stack;//creating object of stack
+     var datestack = new utilDS.Stack;//creating object of stack
+     var month = input.questionInt('enter the month in integer')
+     var year = input.questionInt('enter the year')//taking user input
      while ((month < 0 || month >= 12) || (month == isNaN)) 
      {//validating if month is less than greter then 12 it will ask use to re enter
          console.log("month should be less than 12")
-         month = ref.questionInt('enter month greater than 0 nad less than 12')
+         month = input.questionInt('enter month greater than 0 nad less than 12')
      }
      while (year == (isNaN) || year < 0) 
      {//validation for year
  
          console.log("year should be greater than 0")
-         year = ref.questionInt('enter year greater than 0')
+         year = input.questionInt('enter year greater than 0')
      }
  
  
@@ -56,17 +56,17 @@
  
      for (var i = week.length - 1; i >= 0; i--) 
      {//taking all the day of week into the array
-         dayQue.push(week[i]);
+         daystack.push(week[i]);
      }
      for (var i = dates[month]; i >= 1; i--) 
      {//taking all the day of week into the array
-         dateQue.push(i);
+         datestack.push(i);
      }
  
  
      for (var i = 0; i < week.length; i++) 
      {
-         util.print(dayQue.pop() + "  ");
+         util.print(daystack.pop() + "  ");
      }
      console.log();
      for (var i = 0; i < (day * 5); i++) 
@@ -78,7 +78,7 @@
      {
          if (i < 10) 
          {
-             util.print(" " + dateQue.pop() + "   ");//printing dates less than 10
+             util.print(" " + datestack.pop() + "   ");//printing dates less than 10
  
          }
  

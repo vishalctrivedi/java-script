@@ -1,4 +1,4 @@
-var utilds=require('../utility/utilityDataStructures');
+var utilDS=require('../utility/utilityDataStructures');
 function primes()
 {
     var primes=[];
@@ -7,7 +7,7 @@ function primes()
     
     for(let i=0;i<10;i++)
     {
-        primes[i]=utilds.isPrime(initial,final)
+        primes[i]=utilDS.isPrime(initial,final)
         console.log(initial+" "+final+":"+"["+primes[i]+"]");
         initial=initial+100;
         final=final+100;

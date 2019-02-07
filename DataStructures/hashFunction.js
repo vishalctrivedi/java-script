@@ -1,5 +1,5 @@
-var utilds = require('../utility/utilityDataStructures');
-var readline = require('readline-sync');
+var utilDS = require('../utility/utilityDataStructures');
+var input = require('readline-sync');
 var util = require('util');
 var filestream = require('fs');
 var utility = require('../utility/utility');
@@ -18,7 +18,7 @@ function hashing()
         
         if (arr[remainder] === undefined) 
         {
-            arr[remainder] = new utilds.LinkedList;
+            arr[remainder] = new utilDS.LinkedList;
             arr[remainder].add(n);
         } 
         else 
@@ -44,7 +44,7 @@ function hashing()
    
     do 
     {
-        var number = readline.question('Enter the number you want to search \n');
+        var number = input.question('Enter the number you want to search \n');
       if (isNaN(number) && number<0) 
       {
         console.log("Enter positive number");
@@ -60,7 +60,7 @@ function hashing()
         
         if (arr[remainder] == undefined) 
         {
-            arr[remainder] = new utilds.LinkedList;
+            arr[remainder] = new utilDS.LinkedList;
         }
         if (arr[remainder].search(Number(number))) 
         {

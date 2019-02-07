@@ -1,0 +1,55 @@
+{
+    "Rice":[
+        {
+            "name":"basmathi",
+            "weight":5,
+            "price":90
+        },
+        {
+            "name":"raw",
+            "weight":10,
+            "price":45
+        },
+        {
+            "name":"boiled",
+            "weight":15,
+            "price":25
+        }
+    ],
+
+    "Wheat":[
+        {
+            "name":"ashirvad",
+            "weight":6,
+            "price":40
+        },
+        {
+            "name":"annapurna",
+            "weight":7,
+            "price":35
+        },
+        {
+            "name":"pillsbury",
+            "weight":2,
+            "price":56
+        }
+    ],
+
+    "Pulses":[
+        {
+            "name":"greengram",
+            "weight":5,
+            "price":60
+        },
+        {
+            "name":"moongdal",
+            "weight":10,
+            "price":90
+        },
+        {
+            "name":"peas",
+            "weight":15,
+            "price":65
+        }
+    ]
+}

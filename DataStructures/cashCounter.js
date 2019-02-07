@@ -14,60 +14,66 @@
  * @since    :   01/02/2019
 
  **************************************************************************/
-var util = require('../utility/utility');
-var utilds = require('../utility/utilityDataStructures');
+var utilDS = require('../utility/utilityDataStructures');
 var input = require('readline-sync');
-function Queue() {
-    var que = new utilds.Queue1;
+function queue() 
+{
+    var que = new utilDS.Queue1;
     var bankAmount = 10000;
     var flag = true;
     var size = input.question("Enter the total number of people to be in queue = ");
-    if (size > 0) {
-        for (let i = 1; i <= size; i++) {
+    if (size > 0) 
+    {
+        for (let i = 1; i <= size; i++) 
+        {
             var in1 = input.question("Enter 1 deposit amount   \nEnter 2 to withdraw amount   :")
-            if (in1 == 1) {
+            if (in1 == 1) 
+            {
                 var amount = input.questionFloat("Enter the total amount to deposit = ")
                 que.enqueue(Number(amount));
+                bankAmount=bankAmount+amount;
                 flag = true;
             }
-            else if (in1 == 2) {
+            else if (in1 == 2) 
+            {
                 var amount = input.questionInt("Enter the total amount to be withdraw = ")
                 que.enqueue(Number(-amount))
-                console.log("Total amount left in bank is:" + totalAmount);
-                if (totalAmount < bankAmount) {
-                    console.log("Minimum cash is not maintained in bank");
-                }
-                else {
-                    console.log("Minimum cash is maintained in bank");
+                bankAmount=bankAmount-amount;
+                if(bankAmount<0)
+                {
+                    console.log("bank is out of cash");
+                    break;
                 }
                 flag = true;
             }
-            else {
+            else 
+            {
                 console.log("Make sure that you have entered correct key ");
                 flag = false;
                 return;
             }
         }
     }
-    else {
+    else 
+    {
         console.log("Invalid input");
         return;
     }
-    if (flag) {
+    if (flag) 
+    {
+        bankAmount=10000;
         var add = 0;
-        for (let i = 1; i <= size; i++) {
+        for (let i = 1; i <= size; i++) 
+        {
             add = add + que.dequeue();
         }
-        console.log(add);
+        //console.log(add);
         var totalAmount = bankAmount + add;
         console.log("Total amount left in bank is:" + totalAmount);
-        if (totalAmount < bankAmount) {
-            console.log("Minimum cash is not maintained in bank");
-
-        }
-        else {
+        if (totalAmount > bankAmount) 
+        {
             console.log("Minimum cash is maintained in bank");
         }
     }
 }
-Queue();
+queue();
