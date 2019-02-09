@@ -1,4 +1,3 @@
-var t=require('util');
 var suit= ["♣️", "🔸", "❤️", "♠️"];
 var rank=['2','3','4','5','6','7','8','9','10',"jack","queen","king","ace"];
 var cards=suit.length * rank.length;

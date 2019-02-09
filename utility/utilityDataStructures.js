@@ -351,7 +351,8 @@ class Stack
         {
             this.head = node;
             this.tail = node;
-        } else {
+        } else 
+        {
             /**
              * We just move the tail pointer
              */
@@ -408,7 +409,6 @@ class Stack
         return st;
     }
 }
-
 
 
 
@@ -566,7 +566,8 @@ class Stack
 
     getRear()
     {
-        if(this.isEmpty()){
+        if(this.isEmpty())
+        {
             return -1;
         }
         return this.arr[this.rear];

@@ -1,6 +1,6 @@
 var read = require('readline-sync')
 var file = require('fs')
-
+var utilDS=require('../utility/utilityDataStructures')
 
 class Stock 
 {
@@ -18,7 +18,7 @@ class Stock
 }
 
 
-class inventoryManage 
+class InventoryManage 
 {
 
     constructor() 
@@ -138,7 +138,11 @@ class Wheat
 
 
 
-module.exports={Stock,Rice,Pulses,Wheat,inventoryManage,
+
+
+
+
+module.exports={Stock,Rice,Pulses,Wheat,InventoryManage,Person,
    
    
 

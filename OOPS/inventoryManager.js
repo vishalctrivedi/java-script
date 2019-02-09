@@ -1,11 +1,11 @@
-var access = require('../utility/utilityOops');
+var utilOops = require('../utility/utilityOops');
 var readline = require('readline-sync');
 var fileRead = require('fs');
 var data = fileRead.readFileSync('stock.json', 'utf8');
 function inventoryManage() 
 {
         var data1 = JSON.parse(data);
-        var object = new access.inventoryManage()
+        var object = new utilOops.InventoryManage()
         here: while (ch != 5) 
         {
             console.log("Press 1 to add :");
