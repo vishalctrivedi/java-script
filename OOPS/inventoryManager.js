@@ -5,7 +5,7 @@ var data = fileRead.readFileSync('stock.json', 'utf8');
 function inventoryManage() 
 {
         var data1 = JSON.parse(data);
-        var object = new utilOops.InventoryManage()
+        var object = new utilOops.InventoryManager()
         here: while (ch != 5) 
         {
             console.log("Press 1 to add :");

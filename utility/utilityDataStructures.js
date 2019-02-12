@@ -218,6 +218,20 @@ class LinkedList
 
 
 
+   printele()
+   {
+       var temp=this.head
+       while(temp)
+       {
+           var str=""
+           str=str+"name : "+temp.data.name+", share : "+temp.data.share+", price : "+temp.data.price
+           console.log(str);
+           temp=temp.next;   
+       }
+   }
+
+
+
 }
 
 

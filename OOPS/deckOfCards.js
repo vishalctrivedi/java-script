@@ -1,25 +1,6 @@
-var suit= ["♣️", "🔸", "❤️", "♠️"];
-var rank=['2','3','4','5','6','7','8','9','10',"jack","queen","king","ace"];
-var cards=suit.length * rank.length;
-var cardarr=[];
-
-for(let i=0;i<suit.length;i++)
-{
-    for(let j=0;j<rank.length;j++)
-    {
-        var temp=" ";
-        cardarr.push(temp+rank[j]+suit[i]);
-    }
-}
-
-for(let i=0;i<cards;i++)
-{
-    var num=Math.floor(Math.random()*cards);
-    var temp=cardarr[i]+" ";
-    cardarr[i]=cardarr[num];
-    cardarr[num]=temp;
-}
-
+var utilityOops = require("../utility/utilityOops");
+var deck=new utilityOops.Deck();
+var cardarr=deck.createDeck();
 var arr=[[],[],[],[]];
 var a=0;
 

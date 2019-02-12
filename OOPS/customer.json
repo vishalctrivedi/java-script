@@ -1,0 +1,42 @@
+{
+    "customer": [
+        {
+            "name": "swamy",
+            "id": "66",
+            "share": 86
+        },
+        {
+            "name": "arun",
+            "id": 44,
+            "share": 39
+        },
+        {
+            "name": "anil",
+            "id": 55,
+            "share": 10
+        },
+        {
+            "name": "TCS",
+            "id": 35,
+            "share": null
+        },
+        {
+            "name": "anil",
+            "id": 30
+        },
+        {
+            "name": "3",
+            "id": 50
+        },
+        {
+            "name": "dshrsgdsg",
+            "id": 49
+        },
+        {
+            "name": "vishal",
+            "id": "21",
+            "share": 3,
+            "LastTransaction": "Tue Feb 12 2019 13:10:02 GMT+0530 (IST)"
+        }
+    ]
+}

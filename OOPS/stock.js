@@ -1,8 +1,8 @@
-const util = require('../utility/utilityOops')//calling util function
+const utilityOops = require('../utility/utilityOops')//calling util function
 const fileStream = require('fs')
 const json = fileStream.readFileSync('stock.json')
 var object = JSON.parse(json)//parsing the json file
-var stock = new util.Stock(name, share, price);
+var stock = new utilityOops.Stock(name, share, price);
 for (let key in object.Stock) 
 {
     var name = object.Stock[key].name

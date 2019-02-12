@@ -1,7 +1,7 @@
 const fileStream = require('fs')
 const string = fileStream.readFileSync('oops.txt', 'utf8')//acessing file
 
-const utilOops = require('../utility/utilityOops')//acessing function
+const utilityOops = require('../utility/utilityOops')//acessing function
 const read = require('readline-sync')
 
 var name = read.question('enter name')//reading input from the user
@@ -27,5 +27,5 @@ while (isNaN(num) && num.length!=09)//validating for the name it should be strin
 
 var date = new Date();//creating object of date
 var day=date.toDateString();
-var ans = utilOops.replaceUsingRegex(name, fullName, num, day, string);
+var ans = utilityOops.replaceUsingRegex(name, fullName, num, day, string);
 console.log(ans);

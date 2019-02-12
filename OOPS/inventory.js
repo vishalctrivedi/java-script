@@ -4,51 +4,51 @@ var UtilityOops=require('../utility/utilityOops');
 var input=fileStream.readFileSync('inventory.json');
 var object=JSON.parse(input);
  
-var d=object.Rice;
-var e=object.Wheat;
-var f=object.Pulses;
-var sum=0
+var rice=object.Rice;
+var wheat=object.Wheat;
+var pulses=object.Pulses;
+var sumrice=0
 
-for(let i in d )
+for(let i in rice )
 {
-    var name=d[i].name;
-    var weight=d[i].weight;
-    var price=d[i].price;
+    var name=rice[i].name;
+    var weight=rice[i].weight;
+    var price=rice[i].price;
     var total=weight * price;
-    var sum=sum+total;
+    var sumrice=sumrice+total;
 
-    console.log("the total value of",d[i].name,"is",d[i].weight * d[i].price );
+    console.log("the total value of",rice[i].name,"is",rice[i].weight * rice[i].price );
     i=new UtilityOops.Rice(name,weight,price)
 
 }
-console.log(sum);
+console.log("Total price of rice is "+sumrice);
 console.log();
 
-var sum1=0;
-for(let j in e)
+var sumwheat=0;
+for(let j in wheat)
 {
-    var name=e[j].name;
-    var weight=e[j].weight;
-    var price=e[j].price;
+    var name=wheat[j].name;
+    var weight=wheat[j].weight;
+    var price=wheat[j].price;
     var total=weight * price;
-    console.log("the total value of",e[j].name,"is",e[j].weight * e[j].price );
+    console.log("the total value of",wheat[j].name,"is",wheat[j].weight * wheat[j].price );
     j=new UtilityOops.Wheat(name,weight,price)
-    var sum1=sum1+total;
+    sumwheat=sumwheat+total;
 }
-console.log(sum1);
+console.log("Total price of wheat is "+sumwheat);
 console.log();
 
-var sum2=0;  
-for(let k in f)
+var sumpulses=0;  
+for(let k in pulses)
 {
-    var name=f[k].name;
-    var weight=f[k].weight;
-    var price=f[k].price;
+    var name=pulses[k].name;
+    var weight=pulses[k].weight;
+    var price=pulses[k].price;
     var total=weight * price;
-    console.log("the total value of",f[k].name,"is",f[k].weight * f[k].price );
+    console.log("the total value of",pulses[k].name,"is",pulses[k].weight * pulses[k].price );
     k=new UtilityOops.Pulses(name,weight,price)
-    var sum2=sum2+total;
+    sumpulses=sumpulses+total;
 }
-console.log(sum2+"\n")
-var res=sum+sum1+sum2;
+console.log("Total price of pulses is "+sumpulses+"\n")
+var res=sumrice+sumwheat+sumpulses;
 console.log("Total bill is "+res);
