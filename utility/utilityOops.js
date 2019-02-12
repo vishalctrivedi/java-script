@@ -34,7 +34,7 @@ class InventoryManager {
     }
 
     remove(data) {
-        var name = read.question("Enter the name of the stock want to remove :")
+        var name = read.question("Enter the name of the stock you want to remove :")
         for (let i = 0; i < data.Stock.length; i++) {
             if (data.Stock[i].name == name) {
                 var index = data.Stock.indexOf(data.Stock[i])
@@ -73,6 +73,10 @@ class InventoryManager {
         var d = file.writeFileSync('stock.json', JSON.stringify(data))
     }
 }
+
+
+
+
 
 class Items {
     constructor(name, weight, price) {
@@ -668,6 +672,7 @@ class Deck
         return cardarr;
     }
 }
+
 
 
 

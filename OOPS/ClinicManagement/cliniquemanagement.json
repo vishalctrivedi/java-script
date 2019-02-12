@@ -1,0 +1,43 @@
+{
+    "Doctors": [
+        {
+            "Name": "DR Spoorthy",
+            "Id": "50",
+            "Specialization": "MBBS",
+            "Availability": "AM",
+            "Numberofappointmaent": 0
+        },
+        {
+            "Name": "DR Sahana",
+            "Id": "55",
+            "Specialization": "all",
+            "Availability": "PM",
+            "Numberofappointmaent": 0
+        }
+       
+
+    ],
+    "Patient": [
+        {
+            "Name": "Vishal",
+            "mobilenumber": "7204803794",
+            "Id": "VCT"
+        },
+        {
+            "Name": "Kiran",
+            "mobilenumber": "9632951787",
+            "Id": "TK"
+        },
+        {
+            "Name": "Nithish",
+            "mobilenumber": "9972421973",
+            "Id": "NK"
+        },
+        {
+            "Name": "Thejas",
+            "mobilenumber": "9632951787",
+            "Id": "TH"
+        }
+        
+    ]
+}

@@ -7,7 +7,6 @@ var customerDataJson = JSON.parse(customerData);
 var companyDataJson = JSON.parse(companyData);
 var stockAccount = new utilityOops.StockAccount(customerDataJson, companyDataJson);
 console.log("Enter 1 to create account:");
-//console.log("Enter 2 to total value of amount in account")
 console.log("Enter 2 to buy shares");
 console.log("Enter 3 to sell shares");
 console.log("Enter 4 to information shares of company and customer");

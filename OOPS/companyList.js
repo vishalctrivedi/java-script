@@ -1,30 +1,45 @@
-var utilityDS=require('../utility/utilityDataStructures')
-var read = require('readline-sync')
-var file=require('fs')
-var data=file.readFileSync('company.json','utf8')
-var object=JSON.parse(data)
-var l=new utilityDS.LinkedList
-var a=object.company
-var c=0
-for(let i in a)
-{
-    l.add(object.company[i])
-    c++
+var file = require("fs");
+var readline = require("readline-sync");
+var utility = require("../OOPS/companyShareLinkedList");
+function main() {
+  try {
+    /**
+     * Create companyShare object to use the add, remove, print functionalities.
+     */
+    var companyShares = new utility.CompanyShares();
+    /**
+     * Display the choices
+     */
+    outer: while (true) {
+      console.log("1. Add");
+      console.log("2. Remove");
+      console.log("3. Print");
+      console.log("4. Save and exit");
+        /**
+         * Ask for choice and execute accordingly using switch case
+         */
+      var choice = readline.questionInt("Enter valid choice :");
+      switch (choice) {
+        case 1:
+          companyShares.addTolist();
+          break;
+        case 2:
+          companyShares.removeFromList();
+          break;
+        case 3:
+          companyShares.print();
+          break;
+        case 4:
+          companyShares.writeList();
+          break outer;
+        default:
+          console.log("Please enter valid number ");
+          break;
+      }
+    }
+  } catch (err) {
+    console.log(err.message);
+  }
 }
-console.log(l.printele())
-var name=read.question("Enter the name of company you want to remove :")
-var temp=l.head
-console.log(l.size)
-for(let i=0;i<c;i++)
-{
-    if(temp.data.name==name)
-    {
-    l.remove(temp.data)
-}
-else
-{
-    temp=temp.next;
-}
-}
-
-console.log(l.printele());
+main();
+module.exports = { main };
