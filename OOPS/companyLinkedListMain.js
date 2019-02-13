@@ -1,6 +1,6 @@
 var file = require("fs");
 var readline = require("readline-sync");
-var utility = require("../OOPS/companyShareLinkedList");
+var utility = require("../OOPS/companyLinkedListUtil");
 function main() {
   try {
     /**

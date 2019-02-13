@@ -2,15 +2,29 @@
     "Doctors": [
         {
             "Name": "DR Spoorthy",
-            "Id": "50",
-            "Specialization": "MBBS",
+            "Id": "10",
+            "Specialization": "Physician",
             "Availability": "AM",
             "Numberofappointmaent": 0
         },
         {
             "Name": "DR Sahana",
-            "Id": "55",
-            "Specialization": "all",
+            "Id": "20",
+            "Specialization": "Pediatrician",
+            "Availability": "AM",
+            "Numberofappointmaent": 0
+        },
+        {
+            "Name": "DR Aishwarya",
+            "Id": "30",
+            "Specialization": "Cardiologist",
+            "Availability": "PM",
+            "Numberofappointmaent": 0
+        },
+        {
+            "Name": "DR Pinky",
+            "Id": "40",
+            "Specialization": "Physiotherapist",
             "Availability": "PM",
             "Numberofappointmaent": 0
         }
@@ -21,22 +35,22 @@
         {
             "Name": "Vishal",
             "mobilenumber": "7204803794",
-            "Id": "VCT"
+            "Id": "Vi"
         },
         {
             "Name": "Kiran",
             "mobilenumber": "9632951787",
-            "Id": "TK"
+            "Id": "Ki"
         },
         {
             "Name": "Nithish",
             "mobilenumber": "9972421973",
-            "Id": "NK"
+            "Id": "Ni"
         },
         {
             "Name": "Thejas",
             "mobilenumber": "9632951787",
-            "Id": "TH"
+            "Id": "Th"
         }
         
     ]

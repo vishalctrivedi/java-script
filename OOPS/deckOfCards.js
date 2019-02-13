@@ -1,6 +1,8 @@
 var utilityOops = require("../utility/utilityOops");
 var deck=new utilityOops.Deck();
 var cardarr=deck.createDeck();
+cardarr=deck.shuffle(cardarr);
+
 var arr=[[],[],[],[]];
 var a=0;
 
@@ -11,9 +13,7 @@ for(let i=0;i<4;i++)
         arr[i][j]=cardarr[j+a]
     }
     a=a+9;
+    console.log(arr[i]);
+    console.log();
 }
 
-for(let i=0;i<arr.length;i++)
-{
-    console.log("Deck of Cards["+i+"]= "+"["+""+arr[i]+"]");
-}

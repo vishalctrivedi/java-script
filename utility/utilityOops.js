@@ -84,7 +84,7 @@ class Items {
         this.weight = weight;
         this.price = price;
     }
-    addValue() {
+    calculatePrice() {
         return this.weight * this.price;
     }
 }
@@ -646,31 +646,59 @@ class Player {
 
 
 
-class Deck 
+class Card
 {
+    constructor(rank,suit)
+    {
+        this.rank=rank;
+        this.suit=suit;
+    }
+}
+
+
+
+
+class Deck  
+{
+    constructor()
+    {
+        this.suit = ["♣", "♦", "♥", "♠"];
+        this.rank = ['2', '3', '4', '5', '6', '7', '8', '9', '10', "jack", "queen", "king", "ace"];
+    }
     createDeck()
     {
-        var suit = ["♣️", "🔸", "❤️", "♠️"];
-        var rank = ['2', '3', '4', '5', '6', '7', '8', '9', '10', "jack", "queen", "king", "ace"];
         var cardarr = [];
-        for (let i = 0; i < suit.length; i++) 
+        for (let i = 0; i < this.suit.length; i++) 
         {
-            for (let j = 0; j < rank.length; j++) 
+            for (let j = 0; j < this.rank.length; j++) 
             {
-                var temp = " ";
-                cardarr.push(temp + rank[j] + suit[i]);
+                cardarr.push(new Card(this.rank[j],this.suit[i]));
             }
         }
-        var cards = suit.length * rank.length;
+        return cardarr;
+        
+    }
+
+
+    printCard(Card)
+    {
+        return ""+Card.rank+Card.suit;
+    }
+
+
+    shuffle(cardarr)
+    {
+        var cards = this.suit.length * this.rank.length;
         for (let i = 0; i < cards; i++) 
         {
             var num = Math.floor(Math.random() * cards);
-            var temp = cardarr[i] + " ";
+            var temp = cardarr[i];
             cardarr[i] = cardarr[num];
             cardarr[num] = temp;
         }
         return cardarr;
     }
+        
 }
 
 
@@ -680,7 +708,7 @@ class Deck
 
 
 module.exports = {
-    Stock, Rice, Pulses, Wheat, InventoryManager, Address, StockAccount, Items, Player, Deck,
+    Stock, Rice, Pulses, Wheat, InventoryManager, Address, StockAccount, Items, Player,Deck,Card,
 
 
 

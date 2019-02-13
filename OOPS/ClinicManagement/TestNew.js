@@ -1,5 +1,5 @@
 var read=require('readline-sync')
-var Utility=require('../../utility/utility')
+//var Utility=require('../../utility/utility')
 class Doctors{
     constructor(){
 
@@ -70,7 +70,7 @@ class Doctors{
             var c=0
             for (const key in patient) {
                 var drname=""
-                var namedr=read.question(patient[key].Name+" Enter Doctor Name you want take appointment:")
+                var namedr=read.question(" Enter Doctor Name you want take appointment:")
                   for(let key=0;key<2;key++)
                   {
                     if(doctors[key].Name==namedr)
