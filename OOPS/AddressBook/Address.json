@@ -1,0 +1,55 @@
+{
+    "Person": [
+        {
+            "personfname": "MSS",
+            "personlname": "SWAMY",
+            "city": "KADUR",
+            "state": "KA",
+            "zip": "577140",
+            "phonenumber": "9972421973"
+        },
+        {
+            "personfname": "AAAAAA",
+            "personlname": "",
+            "city": "",
+            "state": "",
+            "zip": "1000",
+            "phonenumber": ""
+        },
+        {
+            "personfname": "shiva",
+            "personlname": "s",
+            "phonenumber": "9",
+            "city": "s",
+            "state": "s"
+        },
+        {
+            "personfname": "zzzzzzzz",
+            "personlname": "s",
+            "phonenumber": "9",
+            "city": "s",
+            "state": "s"
+        },
+        {
+            "personfname": "pinky",
+            "personlname": "bhoomi",
+            "phonenumber": "7411487048",
+            "city": "bgl",
+            "state": "kar"
+        },
+        {
+            "personfname": "Vishal",
+            "personlname": "Trivedi",
+            "phonenumber": "7204803794",
+            "city": "Bangalore",
+            "state": "Karnataka"
+        },
+        {
+            "personfname": "Shreenidhi",
+            "personlname": "Sharma",
+            "phonenumber": "72599507217",
+            "city": "bangalore",
+            "state": "karnataka"
+        }
+    ]
+}

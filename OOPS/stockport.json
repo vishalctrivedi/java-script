@@ -1,0 +1,29 @@
+{
+    "Stock": [
+        {
+            "stockname": "Oracle",
+            "numberofshare": 25,
+            "shareprice": 130000
+        },
+        {
+            "stockname": "google",
+            "numberofshare": 6235,
+            "shareprice": 5000
+        },
+        {
+            "stockname": "amazon",
+            "numbershare": 1200,
+            "shareprice": 4000
+        },
+        {
+            "stockname": "tcs",
+            "numberofshare": 802,
+            "shareprice": 2450
+        },
+        {
+            "stockname": "mahindra",
+            "numberofshare": 5,
+            "shareprice": 24300
+        }
+    ]
+}
