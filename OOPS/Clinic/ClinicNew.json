@@ -1,0 +1,111 @@
+{
+    "Doctor": [
+        {
+            "Name": "Dr.Satya",
+            "Id": "SAT",
+            "Specialisation": "Cardiologist",
+            "Availability": "AM"
+        },
+        {
+            "Name": "Dr.Harish",
+            "Id": "H2o",
+            "Specialisation": "Neurologist",
+            "Availability": "Both"
+        },
+        {
+            "Name": "Dr.Nandini",
+            "Id": "NAN",
+            "Specialisation": "Ophthalmologist ",
+            "Availability": "Both"
+        },
+        {
+            "Name": "Dr.Swathi",
+            "Id": "SWAN",
+            "Specialisation": "Gynacologist",
+            "Availability": "PM"
+        }
+    ],
+    "Patient": [
+        {
+            "Name": "Mukesh",
+            "Id": "muk",
+            "PhoneNumber": 7874545455,
+            "Age": 28,
+            "AppointmentFrom": "Dr.Satya",
+            "OnTheDayOf": 8
+        },
+        {
+            "Name": "AsadullaBaig",
+            "Id": "AB",
+            "PhoneNumber": 7020111245,
+            "Age": 40,
+            "AppointmentFrom": "Dr.Swathi",
+            "OnTheDayOf": 9
+        },
+
+ {
+    "Name": "Praanesh",
+    "Id": "P002",
+    "PhoneNumber": 8899662277,
+    "Age": 47,
+    "AppointmentFrom": "Dr.Harish",
+    "OnTheDayOf": 10
+    },
+    {
+    "Name": "Nagavalli",
+    "Id": "1900",
+    "PhoneNumber": 7026154214,
+    "Age": 119,
+    "AppointmentFrom": "Dr.Satya",
+    "OnTheDayOf": 11
+    },
+    {
+    "Name": "Pasupathi",
+    "Id": "2772",
+    "PhoneNumber": 7815287548,
+    "Age": 30,
+    "AppointmentFrom": "Dr.Harish",
+    "OnTheDayOf": 12
+    },
+    {
+    "Name": "Spoorthy",
+    "Id": "8338",
+    "PhoneNumber": 8970253512,
+    "Age": 22,
+    "AppointmentFrom": "Dr.Swathi",
+    "OnTheDayOf": 13
+    },
+    {
+    "Name": "Swetha",
+    "Id": "1223",
+    "PhoneNumber": 7815454554,
+    "Age": 22,
+    "AppointmentFrom": "Dr.Nandini",
+    "OnTheDayOf": 14
+    },
+    {
+    "Name": "shri",
+    "Id": 23625,
+    "PhoneNumber": 9876543210,
+    "Age": 22,
+    "AppointmentFrom": "Dr.Swathi",
+    "OnTheDayOf": 16
+    },
+    {
+    "Name": "karthik",
+    "Id": 34541,
+    "PhoneNumber": 1231231231,
+    "Age": 22,
+    "AppointmentFrom": "Dr.Satya",
+    "OnTheDayOf": 16
+    },
+    {
+    "Name": "MuthuMani",
+    "Id": 90098,
+    "PhoneNumber": 9696969696,
+    "Age": 42,
+    "AppointmentFrom": "Dr.Harish",
+    "OnTheDayOf": 17
+    }
+    ]
+   }

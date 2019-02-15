@@ -1,46 +1,7 @@
-var read = require('readline-sync')
-  var file = require('fs')
-  var sort=require('../../utility/utility')
- // var D=require('../utility/utility')
- 
- 
- class Person
- {
-    constructor(fname,lname,city,st,zip,phnum){
-        this.firstname=fname,
-        this.lastname=lname,
-        this.city=city,
-        this.state=st,
-        this.zipcode=zip,
-        this.phonenumber=phnum
-    }
-}
 
-class AddressbookManager
-{
+class AddressBook {
 
-    open(address)
-    {
-        var temp=-1;
-        if(address.Person.length>0)
-        {
-            for(var i=0;i<address.Person.length;i++)
-            {
-                console.log(address.Person[i]);
-            }
-        }
-    console.log("Welcome");
-    //var update=read.question("Please enter name of profile")
-
-    }
-    
-
-}
-
- class AddressBook
- {
-
-     address(data) {
+    address(data) {
         console.log("Enter 1 for add person information")
         console.log("Enter 2 for update person information")
         console.log("Enter 3 for remove person information")
@@ -71,7 +32,7 @@ class AddressbookManager
         var city1 = read.question("Enter city of person:")
         var state1 = read.question("Enter state of person:")
         var phonenum1 = read.question("Enter phonenumber:")
-        var zip=read.question("Enter zip code:")
+        var zip = read.question("Enter zip code:")
         //var o=new Person(fname,lname,city1,state1,zip,phonenum1)
         data.Person.push(
             {
@@ -135,7 +96,7 @@ class AddressbookManager
     }
     city(data, index) {
         var cityname = read.question("enter changed city name")
-        data.Person[index].city= cityname
+        data.Person[index].city = cityname
         var d = file.writeFileSync('Address.json', JSON.stringify(data))
 
     }
@@ -164,19 +125,19 @@ class AddressbookManager
         }
 
     }
-    sortfname(data){
-        let fname=data.Person;
+    sortfname(data) {
+        let fname = data.Person;
         function sortbyfname(a, b) {
             if (a.personfname == b.personfname)
-            return 0
+                return 0
             if (a.personfname > b.personfname)
-            return 1
+                return 1
             if (a.personfname < b.personfname)
-            return -1
+                return -1
         }
         var result = fname.sort(sortbyfname);
         console.log(result);
-        
+
 
     }
     sortzip(data) {
@@ -198,4 +159,5 @@ class AddressbookManager
     }
 }
 
-module.exports = {Person,AddressBook,AddressbookManager}
+
+module.exports={AddressBook}
