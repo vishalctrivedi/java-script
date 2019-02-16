@@ -160,4 +160,96 @@ class AddressBook {
 }
 
 
-module.exports={AddressBook}
+
+
+
+
+class AddressBookManager {
+    constructor() {
+        this.personarr = [];
+        this.fnamearr = [];
+        this.lnamearr = [];
+        this.cityarr = [];
+        this.statearr = [];
+        this.ziparr = [];
+        this.phonenumberarr = [];
+    }
+    readContacts() {
+        var file = require('fs')
+        var data1 = file.readFileSync('/home/admin1/VISHAL/OOPS/AddressBook/Address.json', 'utf8')
+        var data = JSON.parse(data1);
+        for (let i in data.Person) {
+            this.personarr.push(data.Person[i]);
+        }
+
+        for (let i in data.Person) {
+            this.fnamearr.push(data.Person[i].personfname);
+        }
+        console.log(fnamearr);
+
+        for (let i in data.Person) {
+            this.lnamearr.push(data.Person[i].personlname);
+        }
+
+        for (let i in data.Person) {
+            this.cityarr.push(data.Person[i].city);
+        }
+
+        for (let i in data.Person) {
+            this.statearr.push(data.Person[i].state);
+        }
+
+        for (let i in data.Person) {
+            this.ziparr.push(data.Person[i].zip);
+        }
+
+        for (let i in data.Person) {
+            this.phonenumberarr.push(data.Person[i].phonenumber);
+        }
+
+    }
+
+
+
+    open() 
+    {
+        console.log(this.fnamearr);
+    }
+
+
+    quit()
+    {
+        return;
+    }
+}
+
+
+
+
+
+class Person {
+    constructor() 
+    {
+        this.firstname;
+        this.lastname;
+        this.city;
+        this.state;
+        this.zipcode;
+        this.phonenumber;
+    }
+    createPerson()
+    {
+        console.log("sssssssssssss")
+        this.firstname=read.question("Enter the first name ");
+        this.lastname=read.question("Enter the last name");
+        this.city=read.question("Enter the city");
+        this.state=read.question("Enter the state");
+        this.zipcode=read.question("Enter the zipcode");
+        this.phonenumber=read.question("Enter the phonenumber");
+        return;
+    }
+}
+
+
+
+module.exports={AddressBook,Person,AddressBookManager}

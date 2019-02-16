@@ -10,7 +10,8 @@ function addressBook() {
         console.log("2:Open address book");
         console.log("3:Exit");
         var choice = read.questionInt("Please enter your choice: ");
-        switch (choice) {
+        switch (choice) 
+        {
             case 1:
                 address.createAddress(details);
                 break;
